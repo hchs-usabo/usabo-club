@@ -192,20 +192,18 @@
     }
 
     .initiative-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 16px;
-      padding: 2rem;
-      transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: var(--shadow-sm);
-    }
-
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 12px;
+    padding: 1.75rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-shadow: var(--shadow-sm);
+  }
     .initiative-card:hover {
-      background: var(--card-bg);
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-    }
-
+     transform: translateY(-6px);
+    box-shadow: 0 12px 20px -4px rgba(16, 185, 129, 0.15);
+    border-color: #86efac;
+  }
     .initiative-title {
       font-size: 1.3rem;
       font-weight: 700;
