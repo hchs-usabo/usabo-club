@@ -1,514 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HCHS USABO Club | Health Careers High School</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #f8fafc;
-      --card-bg: #ffffff;
-      --card-border: #e2e8f0;
-      --accent: #0d9488;
-      --accent-glow: #ccfbf1;
-      --accent-hover: #0f766e;
-      --text: #0f172a;
-      --text-muted: #64748b;
-      --nav-bg: rgba(255, 255, 255, 0.9);
-      --card-hover: #f1f5f9;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
-      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HCHS USABO Club | Health Careers High School</title>
+<meta name="description" content="Free study guides, past exams, and practice for the USA Biology Olympiad, from the Health Careers High School USABO club.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0f2a5c;--blue:#2b7de9;--blue-dark:#1b5bbf;--sky:#e4f0ff;--bg:#f6faff;--ink:#0f1f3d;--muted:#475673;--line:#d6e1f2;--white:#fff;
+--serif:'Source Serif 4',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15;letter-spacing:-.01em}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      scroll-behavior: smooth;
-    }
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:var(--white);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-family:var(--serif);font-weight:600;font-size:1.25rem;text-decoration:none;color:var(--ink)}
+.links{display:flex;gap:28px;list-style:none}
+.links a{text-decoration:none;font-size:.92rem;color:var(--muted);font-weight:500}
+.links a:hover{color:var(--blue-dark)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:6px;padding:6px 12px;font:500 .9rem var(--sans);color:var(--ink);cursor:pointer}
 
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+/* hero */
+.hero{background:var(--navy);color:var(--white);text-align:center;padding:84px 0 88px;
+background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:44px 44px}
+.badge{display:inline-block;border:1px solid #3b5a96;border-radius:99px;padding:4px 14px;font:500 .75rem var(--mono);color:#bcd0f2;margin-bottom:22px}
+.hero h1{font-size:clamp(2.6rem,7vw,4.4rem);margin-bottom:14px}
+.hero p{max-width:560px;margin:0 auto 32px;color:#c6d6f3;font-size:1.1rem}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{border:0;border-radius:8px;padding:13px 24px;font:600 .95rem var(--sans);color:#fff;background:var(--blue);cursor:pointer;text-decoration:none;display:inline-block}
+.btn:hover{background:#1f6bd4}
+.btn.alt{background:#1a8fcf}.btn.alt:hover{background:#1479b3}
 
-    /* Top Navigation */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      background: var(--nav-bg);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--card-border);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: var(--shadow-sm);
-    }
+/* sections */
+section{padding:72px 0}
+.sec-h{font-size:clamp(1.9rem,4vw,2.5rem);margin-bottom:10px}
+.sec-p{color:var(--muted);max-width:640px;margin-bottom:36px;font-size:1.05rem}
+.do-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.do{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:26px}
+.do h3{font-size:1.3rem;margin-bottom:8px}
+.do p{color:var(--muted);font-size:.98rem}
 
-    .brand {
-      font-weight: 800;
-      font-size: 1.2rem;
-      letter-spacing: -0.5px;
-      color: var(--text);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
+/* library */
+#library{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.filters{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.filters input,.filters select{font:400 .95rem var(--sans);color:var(--ink);background:var(--white);border:1px solid #c3d1e8;border-radius:8px;padding:11px 14px;height:46px}
+.filters input{flex:1 1 260px}
+.filters select{flex:0 1 300px;cursor:pointer}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.chip{border:1px solid #c3d1e8;background:var(--white);color:var(--ink);border-radius:99px;padding:6px 16px;font:500 .85rem var(--sans);cursor:pointer}
+.chip:hover{border-color:var(--blue)}
+.chip[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+.count{font-size:.88rem;color:var(--muted);margin:14px 0 20px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.strip{background:var(--sky);padding:14px 18px;display:flex;justify-content:space-between;gap:10px;font:500 .74rem var(--mono);color:var(--blue-dark)}
+.card-b{padding:18px;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:1.2rem;margin-bottom:6px}
+.card p{font-size:.92rem;color:var(--muted);margin-bottom:16px}
+.open{margin-top:auto;font:500 .82rem var(--mono);color:var(--blue-dark);text-decoration:none}
+.open:hover{text-decoration:underline}
+.soon{margin-top:auto;font:400 .82rem var(--mono);color:#7a869c}
+.empty{grid-column:1/-1;text-align:center;padding:40px 0;color:var(--muted)}
+.empty button{margin-top:12px}
 
-    .brand span {
-      color: var(--accent);
-    }
+/* leadership */
+.lead-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.person{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:20px}
+.role{font:500 .78rem var(--mono);color:var(--blue-dark);margin-bottom:6px}
+.person h3{font-size:1.1rem;font-family:var(--sans);font-weight:600}
+.person small{color:var(--muted);font-size:.88rem}
+.person.open-role h3{color:#7a869c;font-weight:500}
 
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      list-style: none;
-    }
+footer{background:var(--navy);color:#c6d6f3;padding:36px 0;font-size:.92rem}
+.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:#fff;font-weight:500}
 
-    .nav-links a {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--accent);
-    }
-
-    /* Container */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-    }
-
-    /* Hero Section */
-    .hero {
-      padding: 9rem 0 5rem;
-      text-align: center;
-      position: relative;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      padding: 0.35rem 1rem;
-      background: var(--accent-glow);
-      border: 1px solid rgba(13, 148, 136, 0.3);
-      color: var(--accent);
-      border-radius: 50px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      letter-spacing: -1px;
-      margin-bottom: 1rem;
-      line-height: 1.2;
-      color: var(--text);
-    }
-
-    .hero p {
-      max-width: 700px;
-      margin: 0 auto 2.5rem;
-      color: var(--text-muted);
-      font-size: 1.1rem;
-    }
-
-    /* Metrics Grid */
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-
-    .metric-card {
-     background: #f0f9ff; /* Clean light blue */
-     border: 1px solid #bae6fd; /* Soft blue border to match */
-      border-radius: 12px;
-      padding: 1.5rem;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .metric-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .metric-num {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: var(--accent);
-      margin-bottom: 0.25rem;
-    }
-
-    .metric-label {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      font-weight: 600;
-    }
-
-    /* Section Styling */
-    section {
-      padding: 5rem 0;
-      border-bottom: 1px solid var(--card-border);
-    }
-
-    .section-title {
-      font-size: 2rem;
-      font-weight: 800;
-      margin-bottom: 0.5rem;
-      color: var(--text);
-    }
-
-    .section-sub {
-      color: var(--text-muted);
-      margin-bottom: 3rem;
-      font-size: 1rem;
-    }
-
-    /* What We Do Cards */
-    .initiatives-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .initiative-card {
-    background: #f0fdf4;
-    border: 1px solid #bbf7d0;
-    border-radius: 12px;
-    padding: 1.75rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    box-shadow: var(--shadow-sm);
-  }
-    .initiative-card:hover {
-     transform: translateY(-6px);
-    box-shadow: 0 12px 20px -4px rgba(16, 185, 129, 0.15);
-    border-color: #86efac;
-  }
-    .initiative-title {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 0.75rem;
-    }
-
-    .initiative-desc {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-
-    /* Tabbed Resources Section */
-    .tabs {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 2rem;
-      border-bottom: 1px solid var(--card-border);
-      padding-bottom: 0.5rem;
-    }
-
-    .tab-btn {
-      background: none;
-      border: none;
-      color: var(--text-muted);
-      font-family: inherit;
-      font-size: 1rem;
-      font-weight: 600;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      transition: color 0.3s ease;
-    }
-
-    .tab-btn.active {
-      color: var(--accent);
-      border-bottom: 2px solid var(--accent);
-    }
-
-    .tab-content {
-      display: none;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .tab-content.active {
-      display: grid;
-    }
-
-    .resource-card {
-  background: #f0f9ff;
-  border: 1px solid #bae6fd;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+@media(max-width:760px){
+ .menu-btn{display:block}
+ .links{display:none;position:absolute;top:64px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--line);flex-direction:column;gap:0;padding:8px 24px}
+ .links.open{display:flex}
+ .links a{display:block;padding:12px 0}
+ section{padding:52px 0}
+ .hero{padding:60px 0 64px}
 }
-
-.resource-card:hover {
-  transform: translateY(-6px);
-  border-color: #7dd3fc;
-  box-shadow: 0 12px 20px -4px rgba(14, 165, 233, 0.15);
-}
-    .resource-card h4 {
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
-      color: var(--text);
-    }
-
-    .resource-card p {
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      margin-bottom: 1rem;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      background: var(--accent);
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 700;
-      border-radius: 6px;
-      transition: background 0.3s ease;
-    }
-
-    .btn:hover {
-      background: var(--accent-hover);
-    }
-
-    /* Officers Section */
-    .officers-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .officer-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
-      padding: 1.5rem;
-      text-align: center;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .officer-role {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--accent);
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-    }
-
-    .officer-name {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 0.25rem;
-    }
-
-    .officer-grade {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    /* Footer */
-    footer {
-      padding: 3rem 0;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      background: #ffffff;
-      border-top: 1px solid var(--card-border);
-    }
-
-    footer strong {
-      color: var(--text);
-    }
-  </style>
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
 </head>
 <body>
 
-  <!-- Top Navigation -->
-  <nav>
-    <div class="brand">HCHS <span>USABO</span></div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#initiatives">What We Do</a></li>
-      <li><a href="#resources">Resources</a></li>
-      <li><a href="#officers">Leadership</a></li>
-    </ul>
-  </nav>
+<nav aria-label="Main">
+ <div class="wrap nav-in">
+  <a class="logo" href="#top">HCHS USABO</a>
+  <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu</button>
+  <ul class="links" id="navLinks">
+   <li><a href="#about">What we do</a></li>
+   <li><a href="#library">Resources</a></li>
+   <li><a href="#leadership">Leadership</a></li>
+   <li><a href="https://instagram.com/usabohchs" target="_blank" rel="noopener">Instagram</a></li>
+  </ul>
+ </div>
+</nav>
 
-  <!-- Hero Section -->
-  <header class="hero" id="about">
-    <div class="container">
-      <div class="hero-badge">Health Careers High School Chapter</div>
-      <h1>USA Biology Olympiad & Life Science Excellence</h1>
-      <p>Fostering advanced life-science mastery, analytical research capabilities, and community health literacy to develop the next generation of medical innovators.</p>
-      
-      <!-- Metrics Dashboard -->
-      <div class="metrics-grid">
-        <div class="metric-card">
-          <div class="metric-num">100%</div>
-          <div class="metric-label">USABO Open Participation Goal</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-num">10+</div>
-          <div class="metric-label">Target Semifinalist Qualifiers</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-num">200+</div>
-          <div class="metric-label">Community Outreach Target</div>
-        </div>
-        <div class="metric-card">
-          <div class="metric-num">100%</div>
-          <div class="metric-label">Open-Access Curricula</div>
-        </div>
-      </div>
-    </div>
-  </header>
+<header class="hero" id="top">
+ <div class="wrap">
+  <div class="badge">Health Careers High School</div>
+  <h1>HCHS USABO</h1>
+  <p>Free study guides, past exams, and practice for the USA Biology Olympiad, made by students for students.</p>
+  <div class="btns">
+   <a class="btn" href="#library" data-go="all">Browse resources</a>
+   <a class="btn alt" href="#library" data-go="exam">Past exams</a>
+  </div>
+ </div>
+</header>
 
-  <!-- What We Do -->
-  <section id="initiatives">
-    <div class="container">
-      <h2 class="section-title">What We Do</h2>
-      <p class="section-sub">Our core initiatives designed to drive high academic rigor and measurable community impact.</p>
-      
-      <div class="initiatives-grid">
-        <div class="initiative-card">
-          <div class="initiative-title">USABO Contest Preparation</div>
-          <div class="initiative-desc">Structured weekly workshops dissecting Campbell Biology, analytical problem-solving, and former USABO Open Exam questions to maximize student performance in national competitions.</div>
-        </div>
-        <div class="initiative-card">
-          <div class="initiative-title">Health Literacy Initiatives</div>
-          <div class="initiative-desc">Student-led community education programs focused on preventive medicine, cardiovascular health awareness, and basic biological literacy for middle school and local communities.</div>
-        </div>
-        <div class="initiative-card">
-          <div class="initiative-title">Resource Development & Web Platform</div>
-          <div class="initiative-desc">Creating open-source study guides, interactive diagnostic tools, and biological summary sheets accessible to all HCHS students preparing for advanced biology.</div>
-        </div>
-      </div>
-    </div>
-  </section>
+<section id="about">
+ <div class="wrap">
+  <h2 class="sec-h">What we do</h2>
+  <p class="sec-p">We help students prepare for USABO, share health knowledge with our community, and keep everything free to use.</p>
+  <div class="do-grid">
+   <div class="do"><h3>Structured USABO prep</h3><p>Weekly workshops built around Campbell Biology units and past Open Exam questions, so members practice the way the exam is written.</p></div>
+   <div class="do"><h3>Community health literacy</h3><p>Student-led workshops that bring preventive health and basic biology to middle schoolers and the wider community.</p></div>
+   <div class="do"><h3>Open access for everyone</h3><p>Study guides, practice sets, and exams that any student can use. No account and no cost.</p></div>
+  </div>
+ </div>
+</section>
 
-  <!-- Interactive Resources -->
-  <section id="resources">
-    <div class="container">
-      <h2 class="section-title">Study Resources & Materials</h2>
-      <p class="section-sub">Curated academic preparation modules for members.</p>
-      
-      <div class="tabs">
-        <button class="tab-btn active" onclick="switchTab('study')">Study Modules</button>
-        <button class="tab-btn" onclick="switchTab('exams')">Past Exams</button>
-        <button class="tab-btn" onclick="switchTab('guides')">Study Guides</button>
-      </div>
+<section id="library">
+ <div class="wrap">
+  <h2 class="sec-h">Resource library</h2>
+  <p class="sec-p">Organized by Campbell Biology unit. Pick a unit, choose a type, or search by name.</p>
+  <div class="filters">
+   <input type="search" id="q" placeholder="Search resources" aria-label="Search resources">
+   <select id="unit" aria-label="Filter by Campbell unit"></select>
+  </div>
+  <div class="chips" role="group" aria-label="Filter by type">
+   <button class="chip" data-type="all" aria-pressed="true">All types</button>
+   <button class="chip" data-type="guide" aria-pressed="false">Study guides</button>
+   <button class="chip" data-type="practice" aria-pressed="false">Practice sets</button>
+   <button class="chip" data-type="exam" aria-pressed="false">Past exams</button>
+  </div>
+  <div class="count" id="count" aria-live="polite"></div>
+  <div class="cards" id="cards"></div>
+ </div>
+</section>
 
-      <div class="tab-content active" id="tab-study">
-        <div class="resource-card">
-          <h4>Cellular & Molecular Biology</h4>
-          <p>Deep dive into metabolic pathways, enzyme kinetics, and molecular genetics core topics.</p>
-          <!-- Replace '#' with your actual Google Drive link or file link later -->
-          <a href="#" class="btn">View Module</a>
-        </div>
-        <div class="resource-card">
-          <h4>Plant Anatomy & Physiology</h4>
-          <p>Comprehensive breakdown of transport systems, plant hormones, and structural adaptations.</p>
-          <!-- Replace '#' with your actual Google Drive link or file link later -->
-          <a href="#" class="btn">View Module</a>
-        </div>
-      </div>
+<section id="leadership">
+ <div class="wrap">
+  <h2 class="sec-h">Club leadership</h2>
+  <p class="sec-p">The executive board of the HCHS USABO club. Remaining officer roles are filled in the fall election.</p>
+  <div class="lead-grid">
+   <div class="person"><div class="role">President</div><h3>Dharun Mruthva Ganesh Kumar</h3><small>10th grade</small></div>
+   <div class="person"><div class="role">Vice President</div><h3>Helen Grel</h3><small>10th grade</small></div>
+   <div class="person open-role"><div class="role">Secretary</div><h3>Elected in fall</h3></div>
+   <div class="person open-role"><div class="role">Treasurer</div><h3>Elected in fall</h3></div>
+   <div class="person open-role"><div class="role">Director of Academic Prep</div><h3>Elected in fall</h3></div>
+  </div>
+ </div>
+</section>
 
-      <div class="tab-content" id="tab-exams">
-        <div class="resource-card">
-          <h4>USABO Open Exams Archive</h4>
-          <p>Access categorized past examination papers along with detailed solutions and analysis.</p>
-          <!-- Replace '#' with your actual Google Drive link or file link later -->
-          <a href="#" class="btn">Access Archive</a>
-        </div>
-      </div>
+<footer>
+ <div class="wrap foot">
+  <div>&copy; 2026 HCHS USABO Club. Founded by Dharun Mruthva Ganesh Kumar and Helen Grel.</div>
+  <div>Follow us on <a href="https://instagram.com/usabohchs" target="_blank" rel="noopener">Instagram @usabohchs</a></div>
+ </div>
+</footer>
 
-      <div class="tab-content" id="tab-guides">
-        <div class="resource-card">
-          <h4>Cardiovascular System Quick-Ref</h4>
-          <p>Systemic circulation pathways, cardiac action potentials, and structural dissection guides.</p>
-          <!-- Replace '#' with your actual Google Drive link or file link later -->
-          <a href="#" class="btn">Download Guide</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<script src="resources.js"></script>
+<script>
+const UNITS = {
+  0: "General / multi-unit",
+  1: "Unit 1: The chemistry of life",
+  2: "Unit 2: The cell",
+  3: "Unit 3: Genetics",
+  4: "Unit 4: Mechanisms of evolution",
+  5: "Unit 5: Evolutionary history of biological diversity",
+  6: "Unit 6: Plant form and function",
+  7: "Unit 7: Animal form and function",
+  8: "Unit 8: Ecology"
+};
+const FORMAT = {doc: "Google Doc", pdf: "PDF", link: "Link"};
+const ACTION = {doc: "Open guide", pdf: "Download PDF", link: "Open link"};
 
-  <!-- Leadership Section -->
-  <section id="officers">
-    <div class="container">
-      <h2 class="section-title">Club Leadership</h2>
-      <p class="section-sub">Executive board governing the HCHS USABO organization.</p>
-      
-      <div class="officers-grid">
-        <div class="officer-card">
-          <div class="officer-role">President</div>
-          <div class="officer-name">Dharun Mruthva Ganesh Kumar</div>
-          <div class="officer-grade">10th Grade</div>
-        </div>
-        <div class="officer-card">
-          <div class="officer-role">Vice President</div>
-          <div class="officer-name">Helen Grel</div>
-          <div class="officer-grade">10th Grade</div>
-        </div>
-        <div class="officer-card">
-          <div class="officer-role">Secretary</div>
-          <div class="officer-name">To Be Elected</div>
-          <div class="officer-grade">Fall Election</div>
-        </div>
-        <div class="officer-card">
-          <div class="officer-role">Treasurer</div>
-          <div class="officer-name">To Be Elected</div>
-          <div class="officer-grade">Fall Election</div>
-        </div>
-        <div class="officer-card">
-          <div class="officer-role">Dir. of Academic Prep</div>
-          <div class="officer-name">To Be Elected</div>
-          <div class="officer-grade">Fall Election</div>
-        </div>
-      </div>
-    </div>
-  </section>
+const state = {q: "", unit: "all", type: "all"};
+const $ = id => document.getElementById(id);
+const unitSel = $("unit");
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 HCHS USABO Club. Founded & Directed by <strong>Dharun Mruthva Ganesh Kumar</strong> & <strong>Helen Grel</strong> (Health Careers High School).</p>
-    </div>
-  </footer>
+unitSel.add(new Option("All units", "all"));
+Object.keys(UNITS).forEach(k => { if (k !== "0") unitSel.add(new Option(UNITS[k], k)); });
+unitSel.add(new Option(UNITS[0], "0"));
 
-  <script>
-    function switchTab(tabId) {
-      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-      document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-      
-      event.target.classList.add('active');
-      document.getElementById('tab-' + tabId).classList.add('active');
+function render() {
+  const q = state.q.trim().toLowerCase();
+  const list = (typeof RESOURCES !== "undefined" ? RESOURCES : [])
+    .filter(r => (state.unit === "all" || String(r.unit) === state.unit)
+      && (state.type === "all" || r.type === state.type)
+      && (!q || (r.title + " " + (r.desc || "") + " " + (UNITS[r.unit] || "")).toLowerCase().includes(q)))
+    .sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+
+  $("count").textContent = list.length + (list.length === 1 ? " resource" : " resources");
+  const box = $("cards");
+  box.textContent = "";
+
+  if (!list.length) {
+    const e = document.createElement("div");
+    e.className = "empty";
+    e.innerHTML = "<p>No resources match those filters.</p>";
+    const b = document.createElement("button");
+    b.className = "btn"; b.textContent = "Clear filters";
+    b.onclick = () => setFilters("all", "all", "");
+    e.appendChild(b); box.appendChild(e);
+    return;
+  }
+
+  list.forEach(r => {
+    const c = document.createElement("article");
+    c.className = "card";
+    const strip = document.createElement("div");
+    strip.className = "strip";
+    const s1 = document.createElement("span");
+    s1.textContent = r.unit ? "Unit " + r.unit : "General";
+    const s2 = document.createElement("span");
+    s2.textContent = FORMAT[r.format] || "Link";
+    strip.append(s1, s2);
+
+    const body = document.createElement("div");
+    body.className = "card-b";
+    const h = document.createElement("h3"); h.textContent = r.title;
+    body.appendChild(h);
+    if (r.desc) { const p = document.createElement("p"); p.textContent = r.desc; body.appendChild(p); }
+
+    if (r.url) {
+      const a = document.createElement("a");
+      a.className = "open"; a.href = r.url; a.target = "_blank"; a.rel = "noopener";
+      a.textContent = (ACTION[r.format] || "Open") + " \u2192";
+      body.appendChild(a);
+    } else {
+      const s = document.createElement("span");
+      s.className = "soon"; s.textContent = "Coming soon";
+      body.appendChild(s);
     }
-  </script>
+    c.append(strip, body);
+    box.appendChild(c);
+  });
+}
+
+function setFilters(unit, type, q) {
+  state.unit = unit; state.type = type; state.q = q;
+  unitSel.value = unit;
+  $("q").value = q;
+  document.querySelectorAll(".chip").forEach(ch => ch.setAttribute("aria-pressed", String(ch.dataset.type === type)));
+  render();
+}
+
+$("q").addEventListener("input", e => { state.q = e.target.value; render(); });
+unitSel.addEventListener("change", e => { state.unit = e.target.value; render(); });
+document.querySelectorAll(".chip").forEach(ch => ch.addEventListener("click", () => setFilters(state.unit, ch.dataset.type, state.q)));
+document.querySelectorAll("[data-go]").forEach(b => b.addEventListener("click", () => setFilters("all", b.dataset.go, "")));
+
+const menuBtn = $("menuBtn"), navLinks = $("navLinks");
+menuBtn.addEventListener("click", () => {
+  const open = navLinks.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", String(open));
+});
+navLinks.addEventListener("click", e => {
+  if (e.target.tagName === "A") { navLinks.classList.remove("open"); menuBtn.setAttribute("aria-expanded", "false"); }
+});
+
+render();
+</script>
 </body>
 </html>
