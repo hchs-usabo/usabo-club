@@ -16,30 +16,12 @@
 */
 const RESOURCES = [
   {
-    title: "Cellular respiration study guide",
-    unit: 2,
+    title: "Unit 1: Chemistry of life study guide",
+    unit: 1,
     type: "guide",
-    format: "doc",
-    url: "",
-    desc: "Glycolysis, the citric acid cycle, and oxidative phosphorylation.",
-    date: "2026-11-18"
-  },
-  {
-    title: "Mendelian genetics problem set",
-    unit: 3,
-    type: "practice",
-    format: "doc",
-    url: "",
-    desc: "Punnett squares, test crosses, and pedigree analysis.",
-    date: "2026-11-10"
-  },
-  {
-    title: "USABO Open Exam practice test",
-    unit: 0,
-    type: "exam",
     format: "pdf",
-    url: "",
-    desc: "Full-length past exam with worked solutions.",
-    date: "2026-11-01"
+    url: "pdfs/usabo unit 1-the chemistry of life-study guide",
+    desc: "Water, carbon, and the four classes of macromolecules.",
+    date: "2026-11-19"
   }
 ];
