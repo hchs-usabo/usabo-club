@@ -20,7 +20,7 @@ const RESOURCES = [
     unit: 1,
     type: "guide",
     format: "pdf",
-    url: "pdfs/usabo unit 1-the chemistry of life-study guide",
+    url: "pdfs/usabo unit 1-the chemistry of life-study guide.pdf",
     desc: "Water, carbon, and the four classes of macromolecules.",
     date: "2026-11-19"
   }
